@@ -1,0 +1,11 @@
+build:
+  version: 2.0.0
+
+loans:
+  message: "Welcome to loans microservive related QA APIs "
+  contactDetails:
+    name: "Sheri Sar - Tester"
+    email: "ss@nowhere.com"
+  onCallSupport:
+    - (801) 222-1234
+    - (801) 123-1345

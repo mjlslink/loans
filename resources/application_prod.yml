@@ -1,0 +1,11 @@
+build:
+  version: 1.0.0
+
+loans:
+  message: "Welcome to loans microservive related PROD APIs "
+  contactDetails:
+    name: "Wayne Western - Production"
+    email: "wayne@nowhere.com"
+  onCallSupport:
+    - (801) 777-9012
+    - (801) 333-4234
