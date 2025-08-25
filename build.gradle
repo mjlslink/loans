@@ -9,7 +9,7 @@ tasks.named('bootBuildImage') {
     buildpacks = ['paketo-buildpacks/java']
 }
 
-group = 'com.encl'
+group = 'com.encl.loans'
 version = '0.0.1-SNAPSHOT'
 description = 'Loan service (Spring Boot)'
 
@@ -36,7 +36,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     // https://mvnrepository.com/artifact/com.h2database/h2
     implementation("com.h2database:h2:2.3.232")
-	compileOnly 'org.projectlombok:lombok'
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.10")
+
+    compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
