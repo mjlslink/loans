@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
@@ -22,6 +23,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(
+        name = "Crud REST APIs for Loans",
+        description = "CRUD REST APIs for CREATE< READ, UPDATE and DELETE account details"
+)
 @RestController
 @RequestMapping("/api/loans")
 @Validated
@@ -42,7 +47,23 @@ public class LoansController {
     @Autowired
     private LoansContactInfoDto contactInfoDto;
 
-
+    @Operation(
+            summary = "Create Account REST API",
+            description = "REST API to create new Loan"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "HTTP Status CREATED"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
     @PostMapping("/create")
     public ResponseEntity<ResourceDto> createLoan(@Valid @NotEmpty
                                                       @Pattern(regexp = "$|[0-9]{10}", message = "Number must have 10 digits")
