@@ -4,6 +4,13 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2025.0.0"
+    }
+}
+
+
 tasks.named('bootBuildImage') {
     imageName = 'mjlslink5/loans:s4'
     buildpacks = ['paketo-buildpacks/java']
@@ -37,6 +44,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.h2database/h2
     implementation("com.h2database:h2:2.3.232")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.10")
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+    implementation("org.springframework.cloud:spring-cloud-starter-config:5.0.0-M1")
 
     compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
