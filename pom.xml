@@ -71,11 +71,16 @@
 <!--            <groupId>org.springframework.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-config-monitor</artifactId>-->
 <!--        </dependency>-->
+<!--        <dependency>-->
+<!--			<groupId>com.h2database</groupId>-->
+<!--			<artifactId>h2</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
         <dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -111,7 +116,7 @@
                         <image>openjdk:21-jdk-slim</image>
                     </from>
                     <to>
-                        <image>mjlslink5/loans:s6</image>
+                        <image>mjlslink5/loans:s7</image>
                     </to>
                     <container>
                         <mainClass>com.encl.loans.LoansApplication</mainClass>
